@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<!-- default cache configurations if no cache configuration is defined -->
+	<diskStore path="java.io.tmpdir/ehcache" />
+	<defaultCache maxElementsInMemory="1000" eternal="false"
+		timeToIdleSeconds="3" timeToLiveSeconds="120" overflowToDisk="true" />
+
+	<!-- define our own cache configuration -->
+	<cache name="com.prowings.entity.Employee"
+		maxElementsInMemory="100" eternal="false" timeToIdleSeconds="3"
+		timeToLiveSeconds="120" overflowToDisk="false" />
+</ehcache>
